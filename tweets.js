@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import {ADD_TWEET, TOGGLE_FETCH} from './actions';
+import {ADD_TWEET, TOGGLE_FETCH, DISABLE_FETCH} from './actions';
 
 const initialState = {
     tweets: Immutable.List(),
@@ -12,6 +12,8 @@ const reducer = (state = initialState, action) => {
             return Object.assign({}, state, {tweets: state.tweets.unshift(action.tweet)});
         case TOGGLE_FETCH:
             return Object.assign({}, state, {fetchTweets: !state.fetchTweets});
+        case DISABLE_FETCH:
+            return Object.assign({}, state, {fetchTweets: false});
         default:
             return state;
     }

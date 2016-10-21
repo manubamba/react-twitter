@@ -6,16 +6,23 @@ import Immutable from 'immutable';
 import Toggle from 'material-ui/Toggle';
 import TweetsComponent from './tweets-component';
 import {connect} from 'react-redux';
-import {toggleFetch} from './actions';
+import {toggleFetch, disableFetch} from './actions';
+import {Link} from 'react-router';
 
 @connect(({fetchTweets}) => ({
     fetchTweets
 }), (dispatch) => ({
-    toggleFeed: () => dispatch(toggleFetch())
+    toggleFeed: () => dispatch(toggleFetch()),
+    disableFetch: () => dispatch(disableFetch())
 }))
 export default class App extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentWillUnmount() {
+      console.log('Unmount');
+      this.props.disableFetch();
   }
 
   render() {
@@ -35,7 +42,9 @@ export default class App extends React.Component {
           <AppBar
             title="React Twitter"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
-          />
+          >
+          <Link to="/hello">The hello page</Link>
+          </AppBar>
           <Toggle
               defaultToggled={true}
               label="Fetch Tweets"
@@ -47,6 +56,7 @@ export default class App extends React.Component {
               trackSwitchedStyle={styles.trackSwitched}
               style={styles.toggle}
             />
+
             <TweetsComponent />
           </div>
     </MuiThemeProvider>
