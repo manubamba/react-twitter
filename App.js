@@ -16,7 +16,7 @@ export default class App extends React.Component {
                 tweets: this.state.tweets.unshift(tweet)
             });
         }
-    })
+    });
   }
 
   state = {
