@@ -1,0 +1,9 @@
+{
+	"credentials": {
+	    "consumer_key": "CcZEqQ8iKEMVU9P9VLDigFYpZ",
+	    "consumer_secret": "zPHN0EFlueYpAgDi1OBg8rxZfSOsK0nPglp4MaOgFtw0jRfn2l",
+	    "token": "388733711-QwvYXeMnn5CmFF5rp10iwdbHyTxztVPoxFG5sVoW",
+	    "token_secret": "cxyJsDOZq455gG10rXnjVgTtA8WXX1xMj8c5Y4LTcPcva"
+	},
+	"streams": ["javascript", "nodejs", "reactjs", "pizza"]
+}
